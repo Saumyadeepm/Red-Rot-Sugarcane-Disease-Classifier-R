@@ -56,7 +56,7 @@ st.set_page_config(
         
                 The app uses deep learning to classify sugarcane
     leaves as healthy or unhealthy based on the
-    presence of Red Rot Disease.)"""
+    presence of Red Rot Disease.""")
     }
 )
 
