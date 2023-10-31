@@ -49,9 +49,9 @@ st.set_page_config(
     menu_items={
         'Get Help': 'https://www.saumyadeepmitra.live',
         'Report a bug': 'https://www.saumyadeepmitra.live/contact',
-        'About': "# Copyright © 2023 Saumyadeep Mitra. All rights reserved."
+        'About': "# Copyright © 2023 Saumyadeep Mitra. All rights reserved.",
         
-                """The app uses deep learning to classify sugarcane leaves,
+                """The app uses deep learning to classify sugarcane leaves
                 as healthy or unhealthy based on the presence of Red Rot Disease."""
     }
 )
