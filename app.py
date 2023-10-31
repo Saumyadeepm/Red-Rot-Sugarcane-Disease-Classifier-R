@@ -21,14 +21,8 @@ def classify_image(image_path, top_k=1, class_mapping=None):
         img = img_to_array(img) / 255.0  # Normalize the image
         img = np.expand_dims(img, axis=0)  # Add batch dimension
 
-        # Add this code before model prediction for debugging
-        st.write(f'Image Shape: {img.shape}')
-
         # Predict the class probabilities
         class_probs = model.predict(img)[0]
-
-        # Add this code after model prediction for debugging
-        st.write(f'Class Probabilities: {class_probs}')
 
         # Get the top-k predicted class labels and probabilities
         top_indices = class_probs.argsort()[-top_k:][::-1]
@@ -48,7 +42,13 @@ def is_leaf_healthy(predicted_labels):
     return "Healthy" in predicted_labels[0]
 
 # Streamlit app
-st.title("Red Rot Sugarcane Disease Classifier")
+st.set_page_config(
+    page_title="Red Rot Sugarcane Disease Leaf Classifier 🌾",
+    page_icon="🌾",
+    layout="centered",
+)
+
+st.title("Red Rot Sugarcane Disease Leaf Classifier 🌾")
 
 # Upload an image for classification
 uploaded_image = st.file_uploader("Upload an image for classification", type=["jpg", "jpeg", "png"])
