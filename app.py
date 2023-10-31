@@ -57,7 +57,37 @@ st.set_page_config(
     }
 )
 
-st.title("Red Rot Sugarcane Disease Leaf Classifier 🌾")
+# Landing Page Description
+st.markdown(
+    """
+    # 🌾 Red Rot Sugarcane Disease Leaf Classifier App
+
+    ## 🔍 Purpose
+    This app is designed to classify sugarcane leaves as either healthy or unhealthy based on the presence of Red Rot Disease, a common issue in sugarcane farming.
+
+    ## 🚀 Technology Used
+    - 🧠 Framework: TensorFlow and Keras for deep learning model development.
+    - 🖼️ Model: A trained deep learning model is used for image classification.
+    - 🌐 Web Interface: Created using Streamlit, a Python library for building web applications.
+
+    ## 👨‍🌾 User-Friendly
+    The app is user-friendly and doesn't require any technical expertise. Users can easily upload an image and receive classification results.
+
+    ## 📋 Step-by-Step Guide
+    The app provides users with a step-by-step guide on how to use it, making the process intuitive and straightforward.
+
+    ## 📢 Feedback
+    Users have the option to provide feedback or report any issues, allowing for continuous improvement of the app.
+
+    ## 📄 Copyright
+    Copyright © 2023 Saumyadeep Mitra. All rights reserved.
+
+    ## ℹ️ About
+    Users can access an "About" section to learn more about the app's purpose and the technology behind it.
+
+    The Red Rot Sugarcane Disease Leaf Classifier app combines the power of deep learning with a user-friendly interface to help farmers and enthusiasts identify unhealthy sugarcane leaves, ultimately contributing to healthier crops. 🌾🌱👨‍🌾
+    """
+)
 
 # Upload an image for classification
 uploaded_image = st.file_uploader("Upload an image for classification", type=["jpg", "jpeg", "png"])
@@ -79,7 +109,6 @@ if uploaded_image is not None:
         st.success('The leaf is healthy.')
     else:
         st.error('The leaf is not healthy.')
-
 
 # Feedback form
 st.subheader("Feedback Form")
