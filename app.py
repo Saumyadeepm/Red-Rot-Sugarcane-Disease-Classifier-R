@@ -6,7 +6,10 @@ import numpy as np
 
 # Load the trained model with error handling
 model_path = 'Desktop/SG_Research/Best_red_rot_sugarcane_model.h5'  # Update with the path to your model file
-
+copyright_text = """
+Copyright © 2023 [Saumyadeep Mitra](https://www.saumyadeepmitra.live). All rights reserved.
+The app uses deep learning to classify sugarcane leaves as healthy or unhealthy based on the presence of Red Rot Disease.
+"""
 try:
     model = load_model(model_path)
 except FileNotFoundError:
@@ -49,11 +52,11 @@ st.set_page_config(
     menu_items={
         'Get Help': 'https://www.saumyadeepmitra.live',
         'Report a bug': 'https://www.saumyadeepmitra.live/contact',
-        'About': """# Copyright © 2023 Saumyadeep Mitra. All rights reserved.
+        'About': st.markdown("""# Copyright © 2023 Saumyadeep Mitra. All rights reserved.
         
                 The app uses deep learning to classify sugarcane
     leaves as healthy or unhealthy based on the
-    presence of Red Rot Disease."""
+    presence of Red Rot Disease.)"""
     }
 )
 
@@ -80,8 +83,9 @@ st.markdown(
     Users have the option to provide feedback or report any issues, allowing for continuous improvement of the app.
 
     ## 📄 Copyright
-    Copyright © 2023 Saumyadeep Mitra. All rights reserved.
-
+    """)
+st.markdown(copyright_text)
+st.markdown("""
     ## ℹ️ About
     Users can access an "About" section to learn more about the app's purpose and the technology behind it.
 
