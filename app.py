@@ -46,6 +46,10 @@ st.set_page_config(
     page_title="Red Rot Sugarcane Disease Leaf Classifier 🌾",
     page_icon="🌾",
     layout="centered",
+    menu_items={
+        'Get Help': 'https://www.saumyadeepmitra.live',
+        'Report a bug': 'https://www.saumyadeepmitra.live/contact'",
+        'About': "Copyright © 2023 Saumyadeep Mitra. All rights reserved."
 )
 
 st.title("Red Rot Sugarcane Disease Leaf Classifier 🌾")
