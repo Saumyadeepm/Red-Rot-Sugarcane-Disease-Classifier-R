@@ -3,10 +3,10 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
-import matplotlib.image as mpimg
 
 # Load the trained model with error handling
 model_path = 'Desktop/SG_Research/Best_red_rot_sugarcane_model.h5'  # Update with the path to your model file
+
 try:
     model = load_model(model_path)
 except FileNotFoundError:
@@ -15,8 +15,8 @@ except FileNotFoundError:
 
 # Define a function for image classification
 def classify_image(image_path, top_k=1, class_mapping=None):
-    # Load and preprocess the image
     try:
+        # Load and preprocess the image
         img = load_img(image_path, target_size=(128, 128))  # Resize the image to the expected input size
         img = img_to_array(img) / 255.0  # Normalize the image
         img = np.expand_dims(img, axis=0)  # Add batch dimension
@@ -43,11 +43,8 @@ def classify_image(image_path, top_k=1, class_mapping=None):
         st.error(f"Error: Image file '{image_path}' not found.")
         return
 
-# Rest of your code remains the same
-
 # Define a function to check if the leaf is healthy
 def is_leaf_healthy(predicted_labels):
-    # Check if the top predicted label is "Healthy"
     return "Healthy" in predicted_labels[0]
 
 # Streamlit app
