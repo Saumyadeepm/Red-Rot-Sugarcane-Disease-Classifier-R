@@ -79,3 +79,15 @@ if uploaded_image is not None:
         st.success('The leaf is healthy.')
     else:
         st.error('The leaf is not healthy.')
+
+
+# Feedback form
+st.subheader("Feedback Form")
+with st.form(key='feedback_form'):
+    feedback_text = st.text_area("Please provide your feedback or report any issues:")
+    submit_button = st.form_submit_button("Submit Feedback")
+
+# Handle feedback submission (you can customize this part)
+if submit_button:
+    # Here, you can send the feedback to your preferred service or save it to a file
+    st.success("Feedback submitted! Thank you for your input.")
