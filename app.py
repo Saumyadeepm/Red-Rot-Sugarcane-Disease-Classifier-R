@@ -69,7 +69,7 @@ st.markdown(
     This app is designed to classify sugarcane leaves as either healthy or unhealthy based on the presence of Red Rot Disease, a common issue in sugarcane farming.
 
     ## 🚀 Technology Used
-    - 🧠 Framework: TensorFlow and Keras for deep learning model development.
+    - 🧠 ***Framework:*** TensorFlow and Keras for deep learning model development.
     - 🖼️ Model: A trained deep learning model is used for image classification.
     - 🌐 Web Interface: Created using Streamlit, a Python library for building web applications.
 
@@ -133,4 +133,4 @@ st.sidebar.markdown("### Follow these steps to use the app:")
 st.sidebar.markdown("1. **Upload an image of a sugarcane leaf.**")
 st.sidebar.markdown("2. **Wait for the app to process the image.**")
 st.sidebar.markdown("3. **Review the classification results.**")
-st.sidebar.markdown("4. The app will tell you if the leaf is healthy or not.")
+st.sidebar.markdown("4. **The app will tell you if the leaf is healthy or not.**")
