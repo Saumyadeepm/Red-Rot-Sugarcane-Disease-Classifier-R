@@ -66,30 +66,30 @@ st.markdown(
     # 🌾 Red Rot Sugarcane Disease Leaf Classifier App
 
     ## 🔍 Purpose
-    This app is designed to classify sugarcane leaves as either healthy or unhealthy based on the presence of Red Rot Disease, a common issue in sugarcane farming.
+    **This app is designed to classify sugarcane leaves as either healthy or unhealthy based on the presence of Red Rot Disease, a common issue in sugarcane farming.**
 
     ## 🚀 Technology Used
     - 🧠 ***Framework:*** TensorFlow and Keras for deep learning model development.
-    - 🖼️ Model: A trained deep learning model is used for image classification.
-    - 🌐 Web Interface: Created using Streamlit, a Python library for building web applications.
+    - 🖼️ ***Model:*** A trained deep learning model is used for image classification.
+    - 🌐 ***Web Interface:*** Created using Streamlit, a Python library for building web applications.
 
     ## 👨‍🌾 User-Friendly
-    The app is user-friendly and doesn't require any technical expertise. Users can easily upload an image and receive classification results.
+    **The app is user-friendly and doesn't require any technical expertise. Users can easily upload an image and receive classification results.**
 
     ## 📋 Step-by-Step Guide
-    The app provides users with a step-by-step guide on how to use it, making the process intuitive and straightforward.
+    **The app provides users with a step-by-step guide on how to use it, making the process intuitive and straightforward.**
 
     ## 📢 Feedback
-    Users have the option to provide feedback or report any issues, allowing for continuous improvement of the app.
+    **Users have the option to provide feedback or report any issues, allowing for continuous improvement of the app.**
 
     ## 📄 Copyright
     """)
 st.markdown(copyright_text)
 st.markdown("""
     ## ℹ️ About
-    Users can access an "About" section to learn more about the app's purpose and the technology behind it.
+    ***Users can access an "About" section to learn more about the app's purpose and the technology behind it.***
 
-    The Red Rot Sugarcane Disease Leaf Classifier app combines the power of deep learning with a user-friendly interface to help farmers and enthusiasts identify unhealthy sugarcane leaves, ultimately contributing to healthier crops. 🌾🌱👨‍🌾
+    ***The Red Rot Sugarcane Disease Leaf Classifier app combines the power of deep learning with a user-friendly interface to help farmers and enthusiasts identify unhealthy sugarcane leaves, ultimately contributing to healthier crops.*** 🌾🌱👨‍🌾
     """
 )
 
