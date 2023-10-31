@@ -120,3 +120,12 @@ with st.form(key='feedback_form'):
 if submit_button:
     # Here, you can send the feedback to your preferred service or save it to a file
     st.success("Feedback submitted! Thank you for your input.")
+
+
+# Step-by-Step Guide in Sidebar
+st.sidebar.title("Step-by-Step Guide")
+st.sidebar.markdown("Follow these steps to use the app:")
+st.sidebar.markdown("1. Upload an image of a sugarcane leaf.")
+st.sidebar.markdown("2. Wait for the app to process the image.")
+st.sidebar.markdown("3. Review the classification results.")
+st.sidebar.markdown("4. The app will tell you if the leaf is healthy or not.")
