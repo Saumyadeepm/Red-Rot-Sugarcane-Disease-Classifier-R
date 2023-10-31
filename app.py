@@ -3,7 +3,6 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 # Load the trained model with error handling
@@ -18,35 +17,33 @@ except FileNotFoundError:
 def classify_image(image_path, top_k=1, class_mapping=None):
     # Load and preprocess the image
     try:
-        img = load_img(image_path, target_size=(128, 128))
-        img = mpimg.imread(image_path)
-        st.image(img, use_column_width=True)
+        img = load_img(image_path, target_size=(128, 128))  # Resize the image to the expected input size
+        img = img_to_array(img) / 255.0  # Normalize the image
+        img = np.expand_dims(img, axis=0)  # Add batch dimension
+
+        # Add this code before model prediction for debugging
+        st.write(f'Image Shape: {img.shape}')
+
+        # Predict the class probabilities
+        class_probs = model.predict(img)[0]
+
+        # Add this code after model prediction for debugging
+        st.write(f'Class Probabilities: {class_probs}')
+
+        # Get the top-k predicted class labels and probabilities
+        top_indices = class_probs.argsort()[-top_k:][::-1]
+        top_labels = [str(idx) for idx in top_indices]
+        top_probabilities = [class_probs[idx] for idx in top_indices]
+
+        if class_mapping:
+            top_labels = [class_mapping.get(label, label) for label in top_labels]
+
+        return top_labels, top_probabilities
     except FileNotFoundError:
         st.error(f"Error: Image file '{image_path}' not found.")
         return
 
-    img = img_to_array(img) / 255.0  # Normalize the image
-    img = np.expand_dims(img, axis=0)  # Add batch dimension
-
-    # Add this code before model prediction for debugging
-    st.write(f'Image Shape: {img.shape}')
-    
-    # Predict the class probabilities
-    class_probs = model.predict(img)[0]
-    
-    # Add this code after model prediction for debugging
-    st.write(f'Class Probabilities: {class_probs}')
-
-
-    # Get the top-k predicted class labels and probabilities
-    top_indices = class_probs.argsort()[-top_k:][::-1]
-    top_labels = [str(idx) for idx in top_indices]
-    top_probabilities = [class_probs[idx] for idx in top_indices]
-
-    if class_mapping:
-        top_labels = [class_mapping.get(label, label) for label in top_labels]
-
-    return top_labels, top_probabilities
+# Rest of your code remains the same
 
 # Define a function to check if the leaf is healthy
 def is_leaf_healthy(predicted_labels):
